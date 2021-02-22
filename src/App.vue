@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     hello vue3 + ts + vite
+    <el-button type="primary">测试element+</el-button>
   </div>
 </template>
 
