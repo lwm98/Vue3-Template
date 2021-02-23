@@ -1,55 +1,43 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <div class="container">
+    <p class="title">vue3-template</p>
 
-  <p v-if="show">====={{test}}=====</p>
-
-  <button @click="count++">count is: {{ count }}</button>
-  <button @click="handleClick">点击这里</button>
+    <button @click="handleAdd">count is: {{ count }}</button>
+    <br>
+    <button @click="handleClick">点击这里跳转</button>
+  </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
+import { useStore } from 'vuex'
+import { Router, useRouter } from 'vue-router'
 export default defineComponent({
   name: 'HelloWorld',
-  props: {
-    msg: {
-      type: String,
-      required: true
+
+  setup: (props, context) => {
+    const store = useStore()
+    const router:Router = useRouter()
+
+    // count 部分
+    const count = computed(() => store.getters.count)
+    const handleAdd = () => {
+      store.commit('user/COUNT_ADD')
     }
-  },
-  data(){
-    return{
-      show:true,
-      test:666
+
+    // 路由部分
+    const handleClick = () => {
+      console.log('click one time:', count)
+      router.push({ path: '/pagea' })
     }
-  },
-  setup: () => {
-    const count = ref(0)
-    return { count }
-  },
-  methods:{
-    handleClick():void{
-      console.log(this.count);
-      console.log("click one time");
-    }
+
+    return { count, handleAdd, handleClick }
   }
 })
 </script>
 
-<style scoped>
-a {
-  color: #42b983;
-}
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+<style lang='scss' scoped>
+.container{
+  text-align: center;
 }
 </style>
