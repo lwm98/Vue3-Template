@@ -7,7 +7,7 @@
 
 <script lang='ts'>
 import { defineComponent } from 'vue'
-import { session } from '@/utils/storage'
+import { session } from '../utils/storage'
 export default defineComponent({
   setup() {
     console.log(session)

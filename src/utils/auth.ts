@@ -1,5 +1,5 @@
 // import Cookies from 'js-cookie'
-import { session } from '@/utils/storage.js'
+import { session } from './storage'
 
 const TokenKey = 'VUE3_PC_TOKEN'
 
