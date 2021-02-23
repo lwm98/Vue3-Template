@@ -1,1 +1,1 @@
-// export {default as cloneDeep} from 'lodash'
+export { default as deepClone } from 'lodash/cloneDeep'

@@ -4,7 +4,7 @@ import store from 'store2'
 const storage = store.namespace('Vue3_Template')
 
 const local = { ...storage, set: localSet }
-const session = { ...storage.session, set: sessionSet }
+const session = { ...storage.session, set: sessionSet } //TODO： bug https://github.com/nbubna/store/pull/85/commits/eac27ae3d4c1f593497566f40ed77f8e8a13b9ac
 
 /**
  * 在 localStorage 保存一条记录，保存前会检测 key 键是否合法
@@ -23,7 +23,7 @@ function localSet(key:string, data:any) {
  */
 function sessionSet(key:string, data:any) {
   // validateKey(key)
-  storage.set(key, data)
+  storage.session.set(key, data)
 }
 
 /**

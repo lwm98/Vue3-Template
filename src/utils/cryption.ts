@@ -14,7 +14,7 @@ const OPTIONS = {
  * @param {Boolean} addModifier 是否在 source 前后添加 API_KEY
  * @returns {String} 数据的 MD5 摘要的 16 进制大写字符串
  */
-export function MD5(source, addModifier = true) {
+export function MD5(source:string, addModifier = true) {
   return CryptoJS.MD5(addModifier ? API_KEY + source + API_KEY : source)
     .toString(CryptoJS.enc.Hex)
     .toUpperCase()
@@ -25,7 +25,7 @@ export function MD5(source, addModifier = true) {
  * @param {String} source - 要加密的字符串
  * @returns {String} AES 加密过的 Base64 字符串
  */
-export function encryptByAES(source) {
+export function encryptByAES(source:string) {
   const encryptedData = CryptoJS.AES.encrypt(source, KEY, OPTIONS)
   return encryptedData.toString()
 }
@@ -35,7 +35,7 @@ export function encryptByAES(source) {
  * @param {String} encryptedBase64Str AES 加密过的字符串
  * @returns {String} 解密后的 utf-8 真实字符串
  */
-export function decryptAES(encryptedStr) {
+export function decryptAES(encryptedStr:string) {
   const decryptedData = CryptoJS.AES.decrypt(encryptedStr, KEY, OPTIONS)
   return CryptoJS.enc.Utf8.stringify(decryptedData)
 }
