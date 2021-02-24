@@ -2,7 +2,7 @@
 <template>
 <div class="container">
   <div class="header">
-    <div class="title">Vue3-Temlate</div>
+    <div class="title">Vue3-Template</div>
   </div>
   <div class="main">
     <div class="wrap">
