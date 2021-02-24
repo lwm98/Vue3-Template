@@ -1,21 +1,32 @@
 import { createRouter,createWebHistory,RouteRecordRaw } from "vue-router"
-
+import Layout from '../layout/index.vue'
 const routes:Array<RouteRecordRaw> = [
     {
         path: "/",
-        name: "Home",
+        name: "Index",
         meta: {
-          title: "首页",
+          title: "主页",
         },
         component: () => import("@/views/index.vue"),
     },
     {
-        path: "/pagea",
-        name: "PageA",
+        path: "/Home",
+        name: "Home",
         meta: {
-          title: "页面A",
+          title: "首页",
         },
-        component: () => import("@/views/PageA.vue"),
+        component: Layout,
+        redirect:'PageA',
+        children:[
+          {
+            path: "/pagea",
+            name: "PageA",
+            meta: {
+              title: "页面A",
+            },
+            component: () => import("@/views/PageA.vue"),
+          },
+        ]
     }
 ]
 

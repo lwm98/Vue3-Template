@@ -1,7 +1,7 @@
 <template>
   <div>
       ===这是页面AAA===
-      <el-skeleton />
+      <el-skeleton animated/>
   </div>
 </template>
 
