@@ -5,7 +5,10 @@ import router from './router'
 import initElement from './plugins/element-plus'
 import './styles/index.scss'
 import './permission'
+import waves from './derective/waves'
 
 let app = createApp(App)
 initElement(app)
 app.use(store).use(router).mount('#app')
+
+waves.install(app)

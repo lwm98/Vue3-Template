@@ -11,7 +11,7 @@
         <div>账号：{{username}}</div>
         <div>密码：{{password}}</div>
       </div>
-      <div><el-button class="loginBtn" type="primary" @click="handleClick">进入</el-button></div>
+      <div><el-button v-waves class="loginBtn" type="primary" @click="handleClick">进入</el-button></div>
     </div>
   </div>
   <div class="footer">
@@ -30,7 +30,9 @@ const username = ref('admin')
 const password = ref('123456')
 
 const handleClick = () => {
-  router.push({ name: 'Home' })
+  setTimeout(() => {
+    router.push({ name: 'Home' })
+  }, 400)
 }
 </script>
 
