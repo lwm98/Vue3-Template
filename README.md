@@ -6,20 +6,22 @@
 [![Vuex](https://img.shields.io/badge/vuex-4.0.0-red.svg "Vuex")](https://next.vuex.vuejs.org)
 [![Vue-Router](https://img.shields.io/badge/vue--router-4.0.4-yellowgreen.svg "Vue-Router")](https://vue3js.cn/router4/)
 
-> 一个简易的模板
+> 一个简易的模板 ⚡️
 
 ## 依赖
 
- lodash  (旧)<br>
- crypto  (旧)<br>
- axios  0.21.1<br>
- store2  (ts使用 源码存在bug 已注明bug修复方法)<br>
- vue-router  4.0.4 (https://vue3js.cn/router4/)<br>
- vuex  4.0.0 (https://next.vuex.vuejs.org/)
+| 依赖 | 版本 |
+|--|--|
+| typescript | 4.1.3 |
+| axios | 0.21.1 |
+| lodash | 0.21.1 (js) |
+| crypto | 0.21.1 (js) |
+| store2 | 0.21.1 |
+| ... | ... |
 
 ## 记录
 
-CSDN:https://blog.csdn.net/weixin_42561312/article/details/113992540
+💡 CSDN：<a href='https://blog.csdn.net/weixin_42561312/article/details/113992540'>https://blog.csdn.net/weixin_42561312/article/details/113992540</a>
 
 ## 运行
 
