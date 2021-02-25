@@ -16,10 +16,14 @@ export default defineComponent({
 </script>
 
 <style lang='scss' scoped>
-.el-footer {
-    background: #F0F2F5;
-    color: #333;
-    text-align: center;
+  .el-footer{
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.45);
     line-height: 22px;
+
+    background-color: #F0F2F5;
+    text-align: center;
   }
 </style>

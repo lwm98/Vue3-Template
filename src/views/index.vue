@@ -25,9 +25,8 @@
     </div>
 
   </div>
-  <div class="footer">
-    <div class="top-btn">帮助  隐私  条款</div>
-    <div>该项目仅供学习参考使用</div>
+  <div class="pd-64">
+    <Footer />
   </div>
 </div>
 </template>
@@ -36,9 +35,11 @@
 import { useRouter } from 'vue-router'
 import { defineComponent, ref } from 'vue'
 import MDinput from '@/components/MDinput/index.vue'
+import Footer from '@/layout/footer/index.vue'
 export default defineComponent({
   components: {
-    MDinput
+    MDinput,
+    Footer
   },
   setup() {
     const router = useRouter()
@@ -95,16 +96,9 @@ $bacc:#F0F3F7;
     }
   }
 
-  .footer{
-    font-size: 14px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.45);
-    line-height: 22px;
-
-    background-color: $bacc;
+  .pd-64{
     padding-bottom: 64px;
-    text-align: center;
+    background-color: $bacc;
   }
 }
 
