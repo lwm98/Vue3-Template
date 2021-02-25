@@ -1,5 +1,9 @@
 <template>
-    <el-footer>Footer</el-footer>
+    <el-footer>
+      <span class="top-btn">帮助  隐私  条款</span>
+      <br>
+      <span>该项目仅供学习参考使用</span>
+    </el-footer>
 </template>
 
 <script lang='ts'>
@@ -13,9 +17,9 @@ export default defineComponent({
 
 <style lang='scss' scoped>
 .el-footer {
-    background-color: #B3C0D1;
+    background: #F0F2F5;
     color: #333;
     text-align: center;
-    line-height: 60px;
+    line-height: 22px;
   }
 </style>

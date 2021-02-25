@@ -21,7 +21,7 @@
                 </el-form-item>
         </el-form>
       </div>
-      <div><el-button v-waves class="loginBtn" type="primary" @click="handleClick">进入</el-button></div>
+      <div><el-button v-waves class="loginBtn" type="primary" @click="handleLogin">进入</el-button></div>
     </div>
 
   </div>
@@ -46,13 +46,13 @@ export default defineComponent({
     const usernameValid = ref(true)
     const passwordValid = ref(true)
 
-    const handleClick = () => {
+    const handleLogin = () => {
       setTimeout(() => {
         router.push({ name: 'Home' })
       }, 400)
     }
 
-    return { loginForm, usernameValid, passwordValid, handleClick }
+    return { loginForm, usernameValid, passwordValid, handleLogin }
   }
 })
 </script>
