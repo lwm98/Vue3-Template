@@ -165,9 +165,8 @@ export default defineComponent({
   setup(props, context) {
     const parent = getCurrentInstance().parent
     const { modelValue } = toRefs(props)
-
     // data
-    let currentValue = props.modelValue;
+    let currentValue = ref(modelValue.value);
     let focus = ref(false);
     let fillPlaceHolder = ref('');
 
