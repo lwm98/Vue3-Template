@@ -1,6 +1,6 @@
 {
-  "name": "my-vue-app",
-  "version": "0.0.0",
+  "name": "vue3-template",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

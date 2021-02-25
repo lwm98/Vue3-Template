@@ -8,11 +8,22 @@
     <div class="wrap">
       <div class="title">登录</div>
       <div class="form">
-        <div>账号：{{username}}</div>
-        <div>密码：{{password}}</div>
+        <el-form>
+            <el-form-item required prop="username">
+                  <MDinput v-model="loginForm.username" name="username" type="text" placeholder="请输入用户名" :required="true" :valid="usernameValid">
+                    <span class="input-label">用户名</span>
+                  </MDinput>
+                </el-form-item>
+                <el-form-item required prop="password">
+                  <MDinput v-model="loginForm.password" type="password" name="title" placeholder="请输入密码" :required="true" :valid="passwordValid">
+                    <span class="input-label">密码</span>
+                  </MDinput>
+                </el-form-item>
+        </el-form>
       </div>
       <div><el-button v-waves class="loginBtn" type="primary" @click="handleClick">进入</el-button></div>
     </div>
+
   </div>
   <div class="footer">
     <div class="top-btn">帮助  隐私  条款</div>
@@ -21,19 +32,29 @@
 </div>
 </template>
 
-<script lang='ts' setup>
+<script lang='ts'>
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
+import { defineComponent, ref } from 'vue'
+import MDinput from '@/components/MDinput/index.vue'
+export default defineComponent({
+  components: {
+    MDinput
+  },
+  setup() {
+    const router = useRouter()
+    const loginForm = ref({ username: '', password: '' })
+    const usernameValid = ref(true)
+    const passwordValid = ref(true)
 
-const router = useRouter()
-const username = ref('admin')
-const password = ref('123456')
+    const handleClick = () => {
+      setTimeout(() => {
+        router.push({ name: 'Home' })
+      }, 400)
+    }
 
-const handleClick = () => {
-  setTimeout(() => {
-    router.push({ name: 'Home' })
-  }, 400)
-}
+    return { loginForm, usernameValid, passwordValid, handleClick }
+  }
+})
 </script>
 
 <style lang='scss' scoped>
