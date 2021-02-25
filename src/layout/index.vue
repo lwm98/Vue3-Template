@@ -2,7 +2,7 @@
     <div class="container">
         <el-container>
             <Siderbar />
-            <el-container direction='vertical'>
+            <el-container class='main-container' direction='vertical'>
                 <Nav />
                 <Main />
                 <Footer />
@@ -28,4 +28,5 @@ export default defineComponent({
 </script>
 
 <style lang='scss' scoped>
+
 </style>
