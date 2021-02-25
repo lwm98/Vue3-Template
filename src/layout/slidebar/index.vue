@@ -1,5 +1,7 @@
 <template>
-    <el-aside width="200px">Vue3-Template</el-aside>
+    <el-aside width="200px">
+      <span class="title">Vue3-Template</span>
+    </el-aside>
 </template>
 
 <script lang='ts'>
