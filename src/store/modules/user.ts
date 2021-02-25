@@ -1,19 +1,19 @@
-import router from "../../router"
+import router from '../../router'
 
 const state = {
   token: 'sdlaiglnaglkh',
-  count:0
+  count: 0
 }
 
 const mutations = {
-  COUNT_ADD:function (state:any) {
+  COUNT_ADD: function(state:any) {
     state.count++
   }
 }
 
 const actions = {
-  LOGIN_OUT:function () {
-    router.replace({name:'Index'})
+  LOGIN_OUT: function() {
+    router.replace({ name: 'Index' })
   }
 }
 

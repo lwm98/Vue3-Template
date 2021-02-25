@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <el-container>
-            <Slidebar />
+            <Siderbar />
             <el-container direction='vertical'>
                 <Nav />
                 <Main />
@@ -14,12 +14,12 @@
 <script lang='ts'>
 import { defineComponent } from 'vue'
 import Nav from './nav/index.vue'
-import Slidebar from './slidebar/index.vue'
+import Siderbar from './siderbar/index.vue'
 import Main from './main/index.vue'
 import Footer from './footer/index.vue'
 export default defineComponent({
   components: {
-    Nav, Slidebar, Main, Footer
+    Nav, Siderbar, Main, Footer
   },
   setup() {
 
