@@ -1,6 +1,6 @@
 <template>
   <i class="sub-el-icon" :class="icon" v-if="icon && icon.includes('el-icon')" />
-  <svg-icon :icon-class="icon" v-else/>
+  <i :class="icon" v-else />
 </template>
 
 <script>

@@ -13,12 +13,7 @@
           :collapse-transition="false"
           mode="vertical"
         >
-          <!-- <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" /> -->
-
-          <el-menu-item-group title="分组">
-            <el-menu-item index="/PageA">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-          </el-menu-item-group>
+          <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
         </el-menu>
       </el-scrollbar>
     </el-aside>
@@ -110,11 +105,11 @@ $navHeight:60px;
     height: 100%;
   }
 
-  .el-menu-item.is-active{
+::v-deep(.el-menu-item.is-active) {
     background-color: $menuActive!important;
   }
 
-  .el-menu-item {
+::v-deep(.el-menu-item) {
     &:hover {
       background-color: $menuHover !important;
     }
