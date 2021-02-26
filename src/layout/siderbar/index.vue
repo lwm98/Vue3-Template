@@ -14,6 +14,7 @@
           mode="vertical"
         >
           <!-- <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" /> -->
+
           <el-menu-item-group title="分组">
             <el-menu-item index="/PageA">选项1</el-menu-item>
             <el-menu-item index="1-2">选项2</el-menu-item>
@@ -27,12 +28,18 @@
 import { computed, defineComponent } from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
-import variables from '../../styles/variables'
-
+import variables from '@/styles/variables'
+import SidebarItem from './SidebarItem.vue'
+import { routes } from '@/router/index'
 export default defineComponent({
+  components: {
+    SidebarItem
+  },
   setup() {
     const route = useRoute()
     const store = useStore()
+
+    const permission_routes = routes
 
     const siderbar = computed(() => {
       return store.getters.sidebarStatus
@@ -50,7 +57,7 @@ export default defineComponent({
       return path
     })
 
-    return { siderbar, isCollapse, variables, activeMenu }
+    return { siderbar, isCollapse, permission_routes, variables, activeMenu }
   }
 })
 </script>
