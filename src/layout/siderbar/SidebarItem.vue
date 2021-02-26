@@ -29,12 +29,11 @@
 </template>
 
 <script>
-import path from 'path'
 import { isExternal } from '@/utils/validate'
 import Item from './Item.vue'
 import AppLink from './Link.vue'
 import { defineComponent, ref } from 'vue'
-
+import { resolvePath as ResolvePath } from '@/utils/path'
 export default defineComponent({
   name: 'SidebarItem',
   components: { Item, AppLink },
@@ -87,7 +86,7 @@ export default defineComponent({
       if (isExternal(props.basePath)) {
         return props.basePath
       }
-      return path.resolve(props.basePath, routePath)
+      return ResolvePath(props.basePath, routePath)
     }
 
     return { onlyOneChild, hasOneShowingChild, resolvePath }

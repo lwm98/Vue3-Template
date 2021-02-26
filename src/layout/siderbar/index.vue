@@ -45,8 +45,6 @@ export default defineComponent({
       return store.getters.sidebarStatus
     })
 
-    console.log(siderbar.value)
-
     const isCollapse = computed(() => {
       return !siderbar.value
     })
