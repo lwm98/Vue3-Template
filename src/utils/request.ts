@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ElMessage as Message} from 'element-plus'
+import { ElMessage as Message } from 'element-plus'
 import { useStore } from 'vuex'
 import { getToken } from './auth'
 import { decryptAES } from './cryption'
@@ -17,15 +17,15 @@ const request = axios.create({
  * 请求拦截器
  */
 request.interceptors.request.use(
-    (config) => {
-      const token = getToken()
-  
-      config.headers.token = token
-      return config
-    },
-    (error) => Promise.reject(error)
- )
-  
+  (config) => {
+    const token = getToken()
+
+    config.headers.token = token
+    return config
+  },
+  (error) => Promise.reject(error)
+)
+
 /**
  * 响应拦截器
  */
@@ -35,7 +35,7 @@ request.interceptors.response.use(
     if (data instanceof ArrayBuffer || data instanceof Blob) {
       return data
     }
-  //   const notIntercept = response.config.url.includes('/api/exrate/')
+    //   const notIntercept = response.config.url.includes('/api/exrate/')
 
     if (isProd) {
       data = JSON.parse(decryptAES(data))

@@ -33,7 +33,7 @@
 
 <script lang='ts'>
 import { useRouter } from 'vue-router'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, reactive, ref } from 'vue'
 import MDinput from '@/components/MDinput/index.vue'
 import Footer from '@/layout/footer/index.vue'
 export default defineComponent({
@@ -43,7 +43,7 @@ export default defineComponent({
   },
   setup() {
     const router = useRouter()
-    const loginForm = ref({ username: '', password: '' })
+    const loginForm = reactive({ username: '', password: '' })
     const usernameValid = ref(true)
     const passwordValid = ref(true)
 

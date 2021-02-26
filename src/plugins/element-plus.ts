@@ -1,6 +1,5 @@
+import { App } from 'vue'
 import {
-  ElRow,
-  ElCol,
   ElContainer,
   ElHeader,
   ElFooter,
@@ -18,7 +17,6 @@ import {
   ElInput,
   ElInputNumber,
   ElSelect,
-  ElOption,
   ElOptionGroup,
   ElCascader,
   ElCascaderPanel,
@@ -33,7 +31,6 @@ import {
   ElTag,
   ElProgress,
   ElTree,
-  ElPagination,
   ElBadge,
   ElAvatar,
   ElAlert,
@@ -53,7 +50,6 @@ import {
   ElSteps,
   ElStep,
   ElDialog,
-  ElTooltip,
   ElPopover,
   ElPopconfirm,
   ElCard,
@@ -67,16 +63,12 @@ import {
   ElCalendar,
   ElImage,
   ElBacktop,
-  ElInfiniteScroll,
-  ElDrawer,
   ElScrollbar,
   ElSkeleton
 } from 'element-plus'
-  
-export default function (app:any) {
-    app.use(ElRow)
-    .use(ElCol)
-    .use(ElContainer)
+
+export default function(app:App) {
+  app.use(ElContainer)
     .use(ElHeader)
     .use(ElFooter)
     .use(ElAside)
@@ -93,7 +85,6 @@ export default function (app:any) {
     .use(ElInput)
     .use(ElInputNumber)
     .use(ElSelect)
-    .use(ElOption)
     .use(ElOptionGroup)
     .use(ElCascader)
     .use(ElCascaderPanel)
@@ -108,7 +99,6 @@ export default function (app:any) {
     .use(ElTag)
     .use(ElProgress)
     .use(ElTree)
-    .use(ElPagination)
     .use(ElBadge)
     .use(ElAvatar)
     .use(ElAlert)
@@ -128,7 +118,6 @@ export default function (app:any) {
     .use(ElSteps)
     .use(ElStep)
     .use(ElDialog)
-    .use(ElTooltip)
     .use(ElPopover)
     .use(ElPopconfirm)
     .use(ElCard)
@@ -142,8 +131,6 @@ export default function (app:any) {
     .use(ElCalendar)
     .use(ElImage)
     .use(ElBacktop)
-    .use(ElInfiniteScroll)
-    .use(ElDrawer)
     .use(ElScrollbar)
     .use(ElSkeleton)
 }

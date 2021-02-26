@@ -6,5 +6,5 @@ import path from 'path'
  * @param routePath 当前路由路径
  */
 export function resolvePath(basePath:string, routePath:string):string {
-  return path.resolve(basePath, routePath)
+  return basePath + routePath
 }

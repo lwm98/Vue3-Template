@@ -7,8 +7,13 @@ import './styles/index.scss'
 import './permission'
 import waves from './derective/waves'
 
-let app = createApp(App)
+const app = createApp(App)
 initElement(app)
-app.use(store).use(router).mount('#app')
+app.use(store).use(router)
+
+// Mount when the route is ready
+router.isReady().then(() => {
+  app.mount('#app', true)
+})
 
 waves.install(app)
