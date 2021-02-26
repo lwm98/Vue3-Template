@@ -1,8 +1,10 @@
 import { local } from '@/utils/storage'
 
+const siderbarStatus = local.get('sidebarStatus')
+
 const state = {
   sidebar: {
-    opened: local.get('sidebarStatus') ? !!+local.get('sidebarStatus') : true,
+    opened: siderbarStatus,
     withoutAnimation: false
   }
 }

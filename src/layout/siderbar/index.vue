@@ -29,11 +29,11 @@ import { computed, defineComponent } from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 import variables from '@/styles/variables'
-import SidebarItem from './SidebarItem.vue'
+// import SidebarItem from './SidebarItem.vue'
 import { routes } from '@/router/index'
 export default defineComponent({
   components: {
-    SidebarItem
+    // SidebarItem
   },
   setup() {
     const route = useRoute()
@@ -44,6 +44,8 @@ export default defineComponent({
     const siderbar = computed(() => {
       return store.getters.sidebarStatus
     })
+
+    console.log(siderbar.value)
 
     const isCollapse = computed(() => {
       return !siderbar.value
